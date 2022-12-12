@@ -17,18 +17,8 @@
         android:layout_height="128dp"
         android:src="@drawable/ic_launcher_background"/>
 
-    <Button
-        app:layout_constraintTop_toBottomOf="@id/mainImageViewLogo"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/mainButtonRecyclerView"
-        android:id="@+id/mainButtonActivityIntent"
-        android:text="Activity with intent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
     <Button
-        app:layout_constraintTop_toBottomOf="@id/mainButtonActivityIntent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
