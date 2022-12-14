@@ -13,6 +13,7 @@ import com.example.androidcloud_salih.databinding.ActivityRecyclerViewBinding
 import com.example.androidcloud_salih.model.MyObjectForRecyclerView
 import com.example.androidcloud_salih.model.ObjectDataSample
 import com.example.androidcloud_salih.viewmodel.AndroidVersionViewModel
+import kotlin.random.Random
 
 
 class RecyclerViewActivity : AppCompatActivity() {
@@ -42,6 +43,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         // We set the adapter to recycler view
         binding.recyclerView.adapter = adapter
+        binding.addItemButton.setOnClickListener { addRandomAndroidVersion() }
+        binding.deleteAllItemButton.setOnClickListener { deleteAndroidVersion() }
 
     }
 
@@ -54,6 +57,14 @@ class RecyclerViewActivity : AppCompatActivity() {
         super.onStop()
         viewModel.androidVersionList.observe(this, androidVersionListObserver)
 
+    }
+    private fun addRandomAndroidVersion() {
+        val random = Random.nextInt(0, 1000)
+        viewModel.insertAndroidVersion("Android $random", random, "url:$random")
+    }
+
+    private fun deleteAndroidVersion() {
+        viewModel.deleteAllAndroidVersion()
     }
     private fun onItemClick(objectDataSample: ObjectDataSample, view: View) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
