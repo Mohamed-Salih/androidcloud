@@ -4,23 +4,33 @@ import android.os.Bundle
 import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidcloud_salih.databinding.ActivityRecyclerViewBinding
 import com.example.androidcloud_salih.model.MyObjectForRecyclerView
-import com.example.androidcloud_salih.model.ObjectDataHeaderSample
 import com.example.androidcloud_salih.model.ObjectDataSample
+import com.example.androidcloud_salih.viewmodel.AndroidVersionViewModel
+
 
 class RecyclerViewActivity : AppCompatActivity() {
 
     private lateinit var adapter: AndroidVersionAdapter
     private lateinit var binding: ActivityRecyclerViewBinding
+    private lateinit var viewModel: AndroidVersionViewModel
+
+    private val androidVersionListObserver = Observer<List<MyObjectForRecyclerView>> {
+        adapter.submitList(it)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRecyclerViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        viewModel = ViewModelProvider(this)[AndroidVersionViewModel::class.java]
 
         // Create the instance of adapter
         adapter = AndroidVersionAdapter { item, view ->
@@ -33,36 +43,21 @@ class RecyclerViewActivity : AppCompatActivity() {
         // We set the adapter to recycler view
         binding.recyclerView.adapter = adapter
 
-        // Generate data and give it to adapter
-        adapter.submitList(generateFakeData())
     }
 
-    private fun onItemClick(objectDataSample: ObjectDataSample, view : View) {
+    override fun onStart() {
+        super.onStart()
+        viewModel.androidVersionList.observe(this, androidVersionListObserver)
+
+    }
+    override fun onStop() {
+        super.onStop()
+        viewModel.androidVersionList.observe(this, androidVersionListObserver)
+
+    }
+    private fun onItemClick(objectDataSample: ObjectDataSample, view: View) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
         Toast.makeText(this, objectDataSample.versionName, Toast.LENGTH_LONG).show()
-    }
+}
 
-    private fun generateFakeData(): MutableList<MyObjectForRecyclerView> {
-        val result = mutableListOf<MyObjectForRecyclerView>()
-        // Create data raw
-        mutableListOf(
-            ObjectDataSample("Android Lollipop", 5),
-            ObjectDataSample("Android Marshmallow", 6),
-            ObjectDataSample("Android Nougat", 7),
-            ObjectDataSample("Android Oreo", 8),
-            ObjectDataSample("Android Pie", 9),
-            ObjectDataSample("Android Q", 10),
-            ObjectDataSample("Android R", 11),
-            ObjectDataSample("Android S", 12)
-        ).groupBy {
-            // Split in 2 list, modulo and not
-            it.versionCode % 2 == 0
-        }.forEach { (isModulo, items) ->
-            // For each mean for each list split
-            // Here we have a map (key = isModulo) and each key have a list of it's items
-            result.add(ObjectDataHeaderSample("Is modulo : $isModulo"))
-            result.addAll(items)
-        }
-        return result
-    }
 }
