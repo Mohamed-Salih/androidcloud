@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.androidcloud_salih">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".architecture.CustomApplication"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidCloud_Salih"
-        tools:targetApi="31">
+        android:theme="@style/Theme.AndroidCloud2021">
         <activity
-            android:name=".view.MainActivity"
+            android:name=".chuckNorris.view.ChuckNorrisActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
+        <!-- Parent activity means we will have back button in top of activity and go to the specified activity -->
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.FirstActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.MainActivity" />
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.SecondActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.FirstActivity" />
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.RecyclerViewActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.MainActivity" />
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.StringsActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.MainActivity" />
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.ResourceActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.MainActivity" />
 
-    <activity
-        android:name=".view.RecyclerViewActivity"
-        android:parentActivityName=".view.MainActivity" />
+        <activity
+            android:name="com.example.androidcloud_salih.yourFeature.view.ValuesLandActivity"
+            android:parentActivityName="com.example.androidcloud_salih.yourFeature.view.MainActivity" />
     </application>
-
 </manifest>
