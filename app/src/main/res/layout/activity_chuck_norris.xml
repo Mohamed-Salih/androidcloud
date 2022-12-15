@@ -6,10 +6,10 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chuckNorrisActivityRv"
+        android:id="@+id/boredActivityActivityRv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/chuckNorrisActivityAdd"
+        app:layout_constraintBottom_toTopOf="@+id/boredActivityActivityAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,20 +17,20 @@
         tools:listitem="@layout/item_chuck_norris" />
 
     <Button
-        android:id="@+id/chuckNorrisActivityAdd"
+        android:id="@+id/boredActivityActivityAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/chuckNorrisActivityDelete"
+        app:layout_constraintEnd_toStartOf="@id/boredActivityActivityDelete"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/chuckNorrisActivityDelete"
+        android:id="@+id/boredActivityActivityDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/chuckNorrisActivityAdd" />
+        app:layout_constraintStart_toEndOf="@id/boredActivityActivityAdd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

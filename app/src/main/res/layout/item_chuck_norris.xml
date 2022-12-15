@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/itemChuckNorrisIcon"
+            android:id="@+id/itemBoredActivityIcon"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="8dp"
@@ -23,16 +23,88 @@
             tools:src="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/itemChuckNorrisQuote"
+            android:id="@+id/itemBoredActivity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
             android:ellipsize="end"
             android:maxLines="3"
-            app:layout_constraintBottom_toBottomOf="@id/itemChuckNorrisIcon"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/itemChuckNorrisIcon"
-            app:layout_constraintTop_toTopOf="@id/itemChuckNorrisIcon"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
+            tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/itemBoredActivity6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            app:layout_constraintBottom_toBottomOf="@id/itemBoredActivityIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemBoredActivityIcon"
+            app:layout_constraintTop_toTopOf="@id/itemBoredActivityIcon"
             tools:text="@tools:sample/full_names" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

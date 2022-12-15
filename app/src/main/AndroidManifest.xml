@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidCloud2021">
         <activity
-            android:name=".chuckNorris.view.ChuckNorrisActivity"
+            android:name=".boredActivity.view.BoredActivityActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

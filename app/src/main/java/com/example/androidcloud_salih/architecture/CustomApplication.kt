@@ -13,7 +13,7 @@ class CustomApplication : Application() {
         Room.databaseBuilder(
             applicationContext,
             CustomRoomDatabase::class.java,
-            "MyDatabaseName"
+            "MyDatabasebored"
         ).fallbackToDestructiveMigration().build()
     }
 
